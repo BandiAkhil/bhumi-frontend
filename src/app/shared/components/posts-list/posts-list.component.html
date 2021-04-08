@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutGap="3vw">
+  <div *ngFor="let post of postsList">
+    <h5 class="post-title"><a [routerLink]="'/posts/' + post.id">{{post.title}}</a></h5>
+    <p><small>{{post.date}}</small></p>
+    <p>{{(post.body.length>280)? (post.body | slice:0:280)+'..':post.body}}
+      <a [routerLink]="'/posts/' + post.id">Read more</a>
+    </p>
+  </div>
+</div>
