@@ -5,13 +5,13 @@ import { PostService } from 'src/app/core/services/post.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
   paginationPage = 0;
-  paginationSize = 10;
+  paginationSize = 6;
 
   constructor(private postService: PostService) { }
 
@@ -22,5 +22,5 @@ export class PostsComponent implements OnInit {
   getPosts() {
     this.postService.getPosts()
       .subscribe(posts => this.posts = posts);
-   }
+  }
 }

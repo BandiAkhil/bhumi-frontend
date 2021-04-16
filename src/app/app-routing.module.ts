@@ -18,10 +18,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
       },
-//       {
-//         path: 'posts',
-//         loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule)
-//       },
+      {
+        path: 'posts',
+        loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule)
+      },
 //       {
 //         path: 'forums',
 //         loadChildren: () => import('./modules/forums/forums.module').then(m => m.ForumsModule)

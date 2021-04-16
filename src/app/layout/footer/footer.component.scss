@@ -1,0 +1,96 @@
+@import "src/assets/styles/custom-colors";
+
+#footer {
+  padding: 20px 0 0px 0;
+  background: #292929;
+  border-top: 5px solid map-get($bhumi-green,800);
+  //border-bottom: 3px solid map-get($bhumi-green,800);
+  bottom: 0;
+  width: 100%;
+}
+
+div {
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-palette: light;
+}
+
+.site-footer {
+  padding: 10px 0;
+  background: #292929;
+  font-size: 10px;
+  color: map-get($bhumi-green,800);
+  bottom: 0;
+  width: 100%;
+  @media (max-width: 768px) {
+    font-size: smaller;
+  }
+}
+
+h2 {
+  color: map-get($bhumi-grey, 400);
+  font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: smaller;
+  }
+}
+
+p {
+  color: map-get($bhumi-grey, 500);
+  font-size: 14px;
+  @media (max-width: 768px) {
+    font-size: smaller;
+  }
+}
+
+.site-footer a {
+  color: map-get($bhumi-green,800);
+}
+
+a {
+  padding: 0 0 10px 0;
+}
+
+.img-fluid {
+  filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(10deg) brightness(105%) contrast(96%);
+}
+
+#fb:hover, #fb:focus {
+  filter: invert(33%) sepia(18%) saturate(1806%) hue-rotate(182deg) brightness(94%) contrast(88%);
+}
+
+#yt:hover, #yt:focus {
+  filter: invert(13%) sepia(86%) saturate(6467%) hue-rotate(0deg) brightness(96%) contrast(114%);
+}
+
+#insta:hover, #insta:focus {
+  filter: invert(38%) sepia(86%) saturate(5971%) hue-rotate(295deg) brightness(84%) contrast(88%);
+}
+
+#twitter:hover, #twitter:focus {
+  filter: invert(46%) sepia(71%) saturate(1219%) hue-rotate(176deg) brightness(100%) contrast(91%);
+}
+
+#linkd:hover, #linkd:focus {
+  filter: invert(24%) sepia(77%) saturate(2183%) hue-rotate(197deg) brightness(98%) contrast(92%);
+}
+
+form {
+  padding-top: 5px;
+}
+
+button {
+  margin: 0 0 0 5px;
+  background: map-get($bhumi-green,800);
+  color: white;
+}
+
+.col-xs {
+  padding: 0 15px 0 15px;
+}
+
+.bot {
+  text-align: center;
+  padding: 0 10px 0 10px;
+}

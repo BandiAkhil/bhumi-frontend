@@ -1,22 +1,19 @@
+<div class="section-background">
+  <img id="background-image" class = "img-fluid" src="assets/img/green-slate.png">
+  <div id="main-title" class="centered">All Articles</div>
+</div>
 <div class="custom-padding">
   <div class="container">
     <div class="content">
-      <div class="row">
-        <div class="col-auto">
-          <h1>Posts</h1>
-        </div>
-<!--        <div class="col-auto ml-auto" *showIfRole="'board'">-->
-<!--          <button class="btn btn-primary" routerLink="/admin/news">Manage news</button>-->
-<!--        </div>-->
-      </div>
-
       <br>
-      <app-posts-list [postsList]="posts | slice: (paginationPage-1) * paginationSize : (paginationPage-1) * paginationSize + paginationSize"></app-posts-list>
+      <div class="row">
+        <app-posts-list [postsList]="posts | slice: (paginationPage-1) * paginationSize : (paginationPage-1) * paginationSize + paginationSize"></app-posts-list>
+      </div>
       <ngb-pagination class="justify-content-center d-flex"
                       [(page)]="paginationPage"
                       [pageSize]="paginationSize"
                       [collectionSize]="posts.length"
-                      [maxSize]="7"
+                      [maxSize]="6"
                       [rotate]="true"></ngb-pagination>
     </div>
   </div>

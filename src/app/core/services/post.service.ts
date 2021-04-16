@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Post } from '@src/app/core/models/post';
+import { environment } from '@src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  baseUrl = '/api/posts';
+  baseUrl = environment.apiBaseUrl + 'posts';
 
   constructor(private http: HttpClient) {}
 
   getPosts(limit = -1) {
     if (limit === -1) {
-      return this.http.get<Post[]>(this.baseUrl);
+      return this.http.get<Post[]>(`${this.baseUrl}/all`);
     }
     return this.http.get<Post[]>(this.baseUrl, {
       params: {limit: limit.toString()}
@@ -25,14 +26,14 @@ export class PostService {
   }
 
   createPost(data: FormData) {
-    return this.http.post<Post>(this.baseUrl, data);
+    return this.http.post<Post>(`${this.baseUrl}/add`, data);
   }
 
   updatePost(data: FormData, id: number | string) {
-    return this.http.put<Post>(`${this.baseUrl}/${id}`, data);
+    return this.http.put<Post>(`${this.baseUrl}/update/${id}`, data);
   }
 
   deletePost(id: number) {
-    return this.http.delete<Post>(`${this.baseUrl}/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
   }
 }

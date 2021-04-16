@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
       route: '/'
     },
     {
-      name: 'Blogs',
+      name: 'Articles',
       route: '/posts'
     },
     {

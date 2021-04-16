@@ -1,50 +1,94 @@
 <div class="section-background">
   <img id="background-image" class = "img-fluid" src="assets/img/home-background.png">
   <div id="main-title" class="centered">bhumi</div>
-  <div id="sub-title" class="centered">Back to Basics</div>
-  <div id="sub-body" class="centered">The more you try to be special, the more you get hurt. Just be, melt and become part of the wind and the earth; become part of everything, as creation intends</div>
+  <div id="sub-title" class="centered">Back to Earth</div>
+  <div id="sub-body" class="centered">"The more you try to be special, the more you get hurt. Just be, melt and become part of the wind and the earth; become part of everything, as creation intends"</div>
+  <div id="quote" class="right">-Sadhguru</div>
 </div>
 <div class="custom-padding section-one">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-9">
-        <app-welcome></app-welcome>
-      </div>
-      <div class="col-12 col-sm-3">
-        <div fxLayout="column" fxFlexFill fxLayoutGap="10px">
-          <div class="contact-room">
-            <h4>OCKHAM ROOM</h4>
-            <p>You find us at <span class="emphasize-text">Technohal 1334 C.</span></p>
-          </div>
-          <div>
-            <h4>OUR SPONSORS</h4>
-            <br>
-<!--            <img class="img-fluid" src="assets/img/Logo/ThalesLogo.png" alt="Ockham">-->
-          </div>
-        </div>
-      </div>
+      <app-welcome></app-welcome>
     </div>
   </div>
 </div>
 <div class="custom-padding bg-dark-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-9">
-        <h3>LATEST POSTS</h3>
+      <div class="col-12 col-sm-9 text-center">
+        <h3>Bhumi Sooktha</h3>
+        <br>
+        <p class="sloka">सत्यं बृहदृतमुग्रं दीक्षा तपो ब्रह्म यज्ञः पृथिवीं धारयन्ति ।<br>
+          सा नो भूतस्य भव्यस्य पत्न्युरुं लोकं पृथिवी नः कृणोतु ॥१॥</p>
+        <br>
+        <br>
+        <p>
+          Salutation to the Mother Earth! The truth (Satyam), the cosmic Divine Rule (Ritam), the spiritual power present in the Supreme Lord Parabrahma, the dedication and penance performed by our Rishi Munis, all these have preserved  the Mother Earth from the ages.She (the Earth) is the witness of the past and the future, O mother take away our soul from this physical world through that divine cosmic life (through its purity and greatness).
+        </p>
+        <br>
+        <h3>Latest Articles</h3>
         <br>
         <app-posts-list [postsList]="posts"></app-posts-list>
         <br>
-        <button class="btn btn-primary" routerLink="/posts">Checkout all the news</button>
+        <button class="btn btn-primary" routerLink="/posts">Explore all</button>
         <br>
         <br>
       </div>
       <div class="col-12 col-sm-3">
-        <h3>UPCOMING ACTIVITIES</h3>
+        <h3>Isha Inner Engineering</h3>
         <br>
-<!--        <app-activity-list [activities]="activities"></app-activity-list>-->
-        <br>
-        <button class="btn btn-primary" routerLink="/posts">Checkout all the activities</button>
-        <br>
+        <p>Inner Engineering is an opportunity to engineer an inner transformation that deepens your perception, bringing about a dimensional shift in the very way you look at your life, your work, and the world that you inhabit. It is offered as an intensive program for personal growth and establishes the possibility of exploring the higher dimensions of life, in addition to optimizing health and success.</p>
+        <p>You can register for any of the three Inner Engineering courses below, which offer different levels of experience.</p>
+        <div class="card-deck">
+          <a href="https://isha.sadhguru.org/in/en/inner-engineering-online">
+            <mdb-card>
+              <div class="view overlay waves-light" mdbWavesEffect>
+                <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2020-05/EMD20-IEO-home_6.jpg" alt="Card image cap"></mdb-card-img>
+              </div>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>Inner Engineering Online</h4>
+                </mdb-card-title>
+                <mdb-card-text>
+                  Inner Engineering Online is a 7-session online course that provides tools and solutions to…
+                </mdb-card-text>
+                <a class="button-text" href="https://isha.sadhguru.org/in/en/inner-engineering-online" mdbBtn color="primary" mdbWavesEffect>Register</a>
+              </mdb-card-body>
+            </mdb-card>
+          </a>
+          <a href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-completion">
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2017-11/Website-Thumbnail-YogaMeditation-IE-Completion.jpg" alt="Card image cap"></mdb-card-img>
+              </div>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>Inner Engineering Completion</h4>
+                </mdb-card-title>
+                <mdb-card-text>
+                  A 1-2 day in-person course for those who have completed Inner Engineering Online, where one…
+                </mdb-card-text>
+                <a class="button-text" href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-completion" mdbBtn color="primary" mdbWavesEffect>Register</a>
+              </mdb-card-body>
+            </mdb-card>
+          </a>
+          <a href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-total">
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2017-11/Website-Thumbnail-YogaMeditation-IETotal.jpg" alt="Card image cap"></mdb-card-img>
+              </div>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>Inner Engineering Total</h4>
+                </mdb-card-title>
+                <mdb-card-text>
+                  An in-person program combining the tools from Inner Engineering Online and the Shambhavi…
+                </mdb-card-text>
+                <a class="button-text" href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-total" mdbBtn color="primary" mdbWavesEffect>Register</a>
+              </mdb-card-body>
+            </mdb-card>
+          </a>
+        </div>
         <br>
       </div>
     </div>

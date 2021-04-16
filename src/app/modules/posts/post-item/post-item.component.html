@@ -1,1 +1,40 @@
-<p>post-item works!</p>
+<div class="post" *ngIf="postItem">
+  <div class="section-background">
+    <img id="background-image" class = "img-fluid" src="assets/img/green-slate.png">
+    <img id="post-image" class = "img-fluid" src="{{postItem.imageUrl}}">
+  </div>
+  <div class="custom-padding">
+    <div class="container">
+      <div class="content">
+        <h2 class="article-title">{{ postItem.title }}</h2>
+        <p><small>
+          Uploaded: {{ postItem.date }}
+        </small></p>
+        <br>
+        <p [innerHTML]="postItem.body"></p><br>
+        <div class="comment-block">
+          <p>Likes: {{ voteCount }}</p>
+          <ul>
+            <li>
+              <div><a href="#"><img src="assets/img/bhumi-logo.png" width="55" height="55" alt="DarkCubes photo avatar"></a></div>
+              <div>
+                <header><a href="#">DarkCubes</a> - <span>posted 1 week ago</span></header>
+                <p>Ut nec interdum libero. Sed felis lorem, venenatis sed malesuada vitae, tempor vel turpis. Mauris in dui velit, vitae mollis risus. Cras lacinia lorem sit amet augue mattis vel cursus enim laoreet. Vestibulum faucibus scelerisque nisi vel sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque massa ac justo tempor eu pretium massa accumsan. In pharetra mattis mi et ultricies. Nunc vel eleifend augue. Donec venenatis egestas iaculis.</p>
+              </div>
+              <ul>
+                <li>
+                  <div><a href="#"><img src="assets/img/bhumi-logo.png" width="55" height="55" alt="Sir_Pig photo avatar"></a></div>
+                  <div>
+                    <header><a href="#">Sir_Pig</a> - <span>posted 1 day ago</span></header>
+                    <p>Sed felis lorem, venenatis sed malesuada vitae, tempor vel turpis. Mauris in dui velit, vitae mollis risus.</p>
+                    <p>Morbi id neque nisl, nec fringilla lorem. Duis molestie sodales leo a blandit. Mauris sit amet ultricies libero. Etiam quis diam in lacus molestie fermentum non vel quam.</p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,40 +1,61 @@
 <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="footer-block col-sm-4 col-12">
+      <div class="footer-block col-sm col-12">
         <div class="region region-footer-first">
-          <div id="block-block-4" class="block block-block">
-            <h2>CONTACT</h2>
+          <div id="block-block-1" class="block block-block">
+            <h2>NAVIGATE</h2>
             <div class="content">
-              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
-                <div class="field-items">
-                  <div class="field-item even" property="content:encoded">
-                    <p>Honoursvereniging Ockham, University of Twente</p>
-                    <p>De Bastille (postvak 47)<br>Postbus 217<br>7500AE Enschede</p>
-                  </div>
+              <div class="row">
+                <div class="col-xs">
+                  <a class="nav-link" routerLink="/">Home <mdb-icon fas icon="angle-right"></mdb-icon></a>
+                  <a class="nav-link" routerLink="/posts">Articles <mdb-icon fas icon="angle-right"></mdb-icon></a>
+                </div>
+                <div class="col-xs">
+                  <a class="nav-link" routerLink="/forums">Forums <mdb-icon fas icon="angle-right"></mdb-icon></a>
+                  <a class="nav-link" routerLink="/login">Login <mdb-icon fas icon="angle-right"></mdb-icon></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer-block col-sm-4 col-6">
-        <div class="region region-footer-second">
+      <div class="footer-block col-sm col-12">
+        <div class="region region-footer-secong">
           <div id="block-block-2" class="block block-block">
-            <h2>VISITING ADDRESS</h2>
+            <h2>CONTACT</h2>
             <div class="content">
-              <p>Technohal TL1334C<br>Hallenweg 5<br>7522NH Enschede</p>
+              <address>
+                <p>Send us an email for any questions on the website or the content</p>
+                <a href="mailto:kiranmaynarni@gmail.com">kiranmaynarni@gmail.com</a>
+              </address>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer-block col-sm-4 col-6">
+      <div class="footer-block col-sm col-12">
         <div class="region region-footer-third">
           <div id="block-block-3" class="block block-block">
             <h2>FOLLOW ISHA</h2>
             <div class="content">
-              <p><a href="https://www.facebook.com/honoursverenigingockham"><img class="img-fluid" src="https://hv-ockham.nl/images/facebook.svg" style="width:40px;"></a>&nbsp; <a href="https://www.linkedin.com/groups/8658308/"><img class="img-fluid" src="https://hv-ockham.nl/images/linkedin.svg" style="width:40px;"></a></p>
-              <p><a href="http://hv-ockham.nl/privacy">Privacy Statement</a></p>
+              <p><a href="https://www.facebook.com/sadhguru/"><img id="fb" class="img-fluid" src="assets/social-svg/facebook.svg" style="width:30px;"></a>&nbsp; <a href="https://www.youtube.com/user/sadhguru"><img id="yt" class="img-fluid" src="assets/social-svg/youtube.svg" style="width:30px;"></a>&nbsp; <a href="https://www.instagram.com/sadhguru/?hl=en"><img id="insta" class="img-fluid" src="assets/social-svg/instagram.svg" style="width:30px;"></a></p>
+              <p><a href="https://twitter.com/sadhguruJV"><img id="twitter" class="img-fluid" src="assets/social-svg/twitter.svg" style="width:30px;"></a>&nbsp; <a href="https://www.linkedin.com/in/sadhguruJV/?ppe=1"><img id="linkd" class="img-fluid" src="assets/social-svg/linkedin.svg" style="width:30px;"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-block col-sm col-12">
+        <div class="region region-footer-fourth">
+          <div id="block-block-4" class="block block-block">
+            <h2>STAY CONNECTED</h2>
+            <div class="content">
+              <p>Get notified of new articles and posts and more</p>
+              <form class="input-group">
+                <input type="text" class="form-control form-control-sm" placeholder="Email Address" aria-label="Email Address" aria-describedby="basic-addon1">
+                <div class="input-group-append">
+                  <button mdbBtn size="sm" type="button" mdbWavesEffect>Sign up</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -44,9 +65,15 @@
 </footer>
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="container">
-    <div class="row">
-      <div class="fcred col-sm-12">
-        Copyright © 2020 <a href="/"></a>. bhumi.
+    <div class="row justify-content-center">
+      <div id="copyright" class="col-xs bot">
+        © 2021 <a href="/"></a>. bhumi
+      </div>
+      <div id="sitemap" class="col-xs bot">
+        <a href="/sitemap">Sitemap</a>
+      </div>
+      <div id="privacy" class="col-xs bot">
+        <a href="/privacy">Privacy Policy</a>
       </div>
     </div>
   </div>
