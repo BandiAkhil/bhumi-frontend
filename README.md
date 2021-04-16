@@ -1,4 +1,8 @@
-# Frontend
+# bhumi-frontend
+
+Currently still under development!
+
+This repository contains code for the frontend implementatin of a blog website with login functionality along with comments, posts, content management system and forums. Frameworks and Technologies used: HTML, CSS, Angular, Bootstrap.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
