@@ -120,6 +120,10 @@ html {
   color: theme-color("primary");
 }
 
+::ng-deep .btn {
+  background-color: theme-color("primary") !important;
+}
+
 .btn-icon {
   font-size: $btn-font-size;
 }
@@ -171,11 +175,6 @@ textarea {
 
 .text-archive {
   color: $archive-color;
-}
-
-.btn-archive {
-  /* color: $light-primary-text; */
-  /* background-color: $archive-color; */
 }
 
 .alert-archive {

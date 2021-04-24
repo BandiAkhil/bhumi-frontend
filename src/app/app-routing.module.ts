@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageLayoutComponent } from 'src/app/layout/page-layout/page-layout.component';
-// import { AuthGuard } from 'src/app/core/guards/auth.guard';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 // import { PageResolver } from 'src/app/core/services/resolvers/page.resolver';
 
 const routes: Routes = [
-//   {
-//     path: 'admin',
-//     canActivate: [AuthGuard],
-//     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
-//   },
+  {
+    path: 'admin',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+  },
   {
     path: '',
     component: PageLayoutComponent,
@@ -26,10 +26,10 @@ const routes: Routes = [
 //         path: 'forums',
 //         loadChildren: () => import('./modules/forums/forums.module').then(m => m.ForumsModule)
 //       },
-//       {
-//         path: 'auth',
-//         loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
-//       },
+      {
+        path: 'auth',
+        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+      },
 //       {
 //         path: 'account',
 //         canActivate: [AuthGuard],

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Vote } from '@src/app/core/models/vote';
-import { environment } from '@src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoteService {
 
-  baseUrl = environment.apiBaseUrl + 'posts';
+  baseUrl = 'api/posts';
 
   constructor(private http: HttpClient) {}
 

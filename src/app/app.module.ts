@@ -11,7 +11,6 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { HomeComponent } from './modules/home/home.component';
 import { AccountComponent } from './modules/account/account.component';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
-import { AuthComponent } from './modules/auth/auth.component';
 import { AdminComponent } from './modules/admin/admin.component';
 import { ForumsComponent } from './modules/forums/forums.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     AdminLayoutComponent,
     AccountComponent,
     NotFoundComponent,
-    AuthComponent,
     AdminComponent,
     ForumsComponent,
     PageLayoutComponent
