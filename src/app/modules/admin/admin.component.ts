@@ -9,29 +9,39 @@ export class AdminComponent implements OnInit {
 
   sections = [
     {
-      name: 'Manage posts',
-      icon: 'view_compact',
+      name: 'Manage home',
+      icon: 'home',
+      linkTo: 'home',
+    },
+    {
+      name: 'Manage articles',
+      icon: 'article',
       linkTo: 'posts',
     },
     {
       name: 'Manage comments',
-      icon: 'school',
+      icon: 'comment',
       linkTo: 'comments',
+    },
+    {
+      name: 'Manage forums',
+      icon: 'forum',
+      linkTo: 'forums',
+    },
+    {
+      name: 'Manage forum-answers',
+      icon: 'question_answer',
+      linkTo: 'forum-answers',
+    },
+    {
+      name: 'Manage isha',
+      icon: 'self_improvement',
+      linkTo: 'isha',
     },
     {
       name: 'Manage users',
       icon: 'supervisor_account',
       linkTo: 'users',
-    },
-    {
-      name: 'Manage forums',
-      icon: 'event_note',
-      linkTo: 'forums',
-    },
-    {
-      name: 'Manage forum-answers',
-      icon: 'monetization_on',
-      linkTo: 'forum-answers',
     }
   ];
 

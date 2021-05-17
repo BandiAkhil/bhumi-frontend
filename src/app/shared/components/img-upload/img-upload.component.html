@@ -1,0 +1,18 @@
+<div class="pb-4" *ngIf="img">
+    <span *ngIf="action == 'upload'; else add" class="text-white">Uploaded Image</span>
+    <ng-template #add>
+        <span class="text-white">Added Image</span>
+    </ng-template>
+    <i class="material-icons text-danger pointer" (click)="deleteImg(img)">
+        close
+    </i>
+    {{ img.name }}
+</div>
+<input type="img" class="d-none" (change)="addImg(img)" multiple #imgUpload>
+<button type="button" class="btn btn-primary" (click)="imgUpload.click()">
+    <i class="material-icons btn-icon">
+        add
+    </i>
+    Replace Image
+</button>
+  

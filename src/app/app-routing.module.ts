@@ -7,7 +7,7 @@ import { AuthGuard } from 'src/app/core/guards/auth.guard';
 const routes: Routes = [
   {
     path: 'admin',
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
   {
@@ -22,13 +22,17 @@ const routes: Routes = [
         path: 'posts',
         loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule)
       },
-//       {
-//         path: 'forums',
-//         loadChildren: () => import('./modules/forums/forums.module').then(m => m.ForumsModule)
-//       },
+      {
+        path: 'forums',
+        loadChildren: () => import('./modules/forums/forums.module').then(m => m.ForumsModule)
+      },
       {
         path: 'auth',
         loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+      },
+      {
+        path: 'isha',
+        loadChildren: () => import('./modules/isha/isha.module').then(m => m.IshaModule)
       },
 //       {
 //         path: 'account',

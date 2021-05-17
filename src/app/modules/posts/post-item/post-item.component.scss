@@ -38,6 +38,18 @@ small {
   color: map-get($bhumi-green, 800);
 }
 
+#like :hover {
+  mdb-icon {
+    background-color: map-get($bhumi-green, 800);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  border-width: 5px;
+  border-color: black;
+}
+
 // ::ng-deep article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 // ol, ul { list-style: none; }
 //

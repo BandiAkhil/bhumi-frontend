@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 // import { Member } from 'src/app/core/models/member';
-// import { PageGroupService } from 'src/app/core/services/page-group.service';
-// import { PageGroup } from 'src/app/core/models/page_group';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  _nav = [
+  nav = [
     {
       name: 'Home',
       route: '/'
@@ -26,52 +25,29 @@ export class HeaderComponent implements OnInit {
       route: '/forums'
     },
     {
+      name: 'Isha',
+      route: '/isha'
+    },
+    {
       name: 'Login',
       route: '/login'
     }
   ];
-  //_pageGroups: PageGroup[] = [];
+
   //user: Member;
 
   constructor(
     private authService: AuthenticationService,
-    //private pageGroupService: PageGroupService,
-    private router: Router) { }
-
-  ngOnInit() {
-//     this.authService.user
-//       .subscribe(user => this.user = user);
-//
-//     this.pageGroupService.pageGroups.subscribe(pageGroups => {
-//       this._pageGroups = pageGroups;
-//     });
+    private router: Router,
+    private meta: Meta) { 
+      this.meta.updateTag({ name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' });
+      this.meta.addTag({ name: 'HandHeldfriendly', content: 'true' });
+      this.meta.addTag({ httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' });
   }
 
-//   get pageGroups() {
-//      const nav = cloneDeep(this._nav);
-//     for (const pageGroup of this._pageGroups) {
-//       const _group = nav.find(p => p.name === pageGroup.name);
-//       if (_group) {
-//         _group.pages = _group.pages.concat(pageGroup.pages.map(page => {
-//           return {
-//             title: page.title,
-//             route: '/pages/' + page.slug
-//           };
-//         }));
-//       } else {
-//         nav.push({
-//           name: pageGroup.name,
-//           pages: pageGroup.pages.map(page => {
-//             return {
-//               title: page.title,
-//               route: '/pages/' + page.slug
-//             };
-//           })
-//         });
-//       }
-//     }
-//     return nav;
-//   }
+  ngOnInit() {
+//  this.authService.user.subscribe(user => this.user = user);
+  }
 
   logout() {
 //     this.authService.logout();

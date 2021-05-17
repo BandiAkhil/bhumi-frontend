@@ -1,0 +1,23 @@
+@import "src/assets/styles/custom-colors";
+
+th {
+  white-space: nowrap;
+}
+  
+a {
+  color: white !important;
+}
+
+i {
+  width: 20px !important;
+}
+
+::ng-deep .page-item.active .page-link {
+  background-color: map-get($bhumi-green,800) !important;
+}
+
+::ng-deep .page-item .page-link {
+  border-radius: 0.9rem !important;
+  margin: 5px;
+}
+  

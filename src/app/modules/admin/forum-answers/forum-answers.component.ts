@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-forum-answers',
   templateUrl: './forum-answers.component.html',
-  styleUrls: ['./forum-answers.component.css']
+  styleUrls: ['./forum-answers.component.scss']
 })
 export class ForumAnswersComponent implements OnInit {
 

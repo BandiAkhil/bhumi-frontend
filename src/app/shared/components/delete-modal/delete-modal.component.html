@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Dialog</h4>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form>
+        Are you sure you want to
+        <ng-container [ngSwitch]="action">
+        <span *ngSwitchCase="_action.DELETE || _action.DELETE_FORUM || _action.DELETE_USER"> delete </span>
+        <span *ngSwitchCase="_action.DE_REGISTER"> de-register from</span>
+        </ng-container>
+        {{ objRef }}?
+    </form>
+    <ng-container [ngSwitch]="action">
+        <span *ngSwitchCase="_action.DELETE_FORUM" style="color: #b71c1c"> Deleting this committee will also delete all activities associated with this committee.</span>
+        <span *ngSwitchCase="_action.DELETE_USER" style="color: #b71c1c"> Deleting this user will also delete all comments, likes, forums, forum-answers associated with this user.</span>
+    </ng-container>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="_delete()">Yes</button>
+</div>
+  

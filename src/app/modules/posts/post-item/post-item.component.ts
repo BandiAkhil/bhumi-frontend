@@ -48,13 +48,11 @@ export class PostItemComponent implements OnInit {
   }
 
   getVoteCount(id: string) {
-    this.voteService.getPostVoteCount(id)
-      .subscribe(voteCount => this.voteCount = voteCount);
+    this.voteService.getPostVoteCount(id).subscribe(voteCount => this.voteCount = voteCount);
   }
 
   getComments(id: string) {
-    this.commentService.getComments(id)
-      .subscribe(comments => this.comments = comments);
+    this.commentService.getComments(id).subscribe(comments => this.comments = comments);
   }
 
   get content() {

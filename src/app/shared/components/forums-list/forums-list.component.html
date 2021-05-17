@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutGap="3vw">
+    <div class="card-deck">
+      <div class="my-1 text-left" *ngFor="let forum of forumList">
+        <mdb-card class="forum-card">
+          <a [routerLink]="'/forums/' + forum.id">
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{(forum.title.length>72)? (forum.title | slice:0:72)+ '..': forum.title}}</h4>
+              </mdb-card-title>
+              <mdb-card-text>
+                {{((forum.body | htmlToText).length>560)? ((forum.body | htmlToText) | slice:0:560)+'..':(forum.body | htmlToText)}}
+                <a id="readmore" [routerLink]="'/forums/' + forum.id">Read more</a>
+              </mdb-card-text>
+            </mdb-card-body>
+          </a>
+          <mdb-card-footer class="text-left">
+            <ul class="list-unstyled list-inline font-small mt-3">
+              <li class="list-inline-item pr-2 white-text">
+                <mdb-icon fas icon="clock" class="pr-1"></mdb-icon>{{forum.date}}</li>
+              <li class="list-inline-item pr-2">
+                <a class="popularity" [routerLink]="'/forums/' + forum.id" class="white-text">
+                  <mdb-icon fas icon="comments" class="pr-1"></mdb-icon>12</a>
+              </li>
+              <li class="list-inline-item pr-2">
+                <a class="popularity" [routerLink]="'/forums/' + forum.id" class="white-text">
+                  <mdb-icon fas icon="heart" class="pr-1"> </mdb-icon>21</a>
+              </li>
+            </ul>
+          </mdb-card-footer>
+        </mdb-card>
+      </div>
+    </div>
+  </div>
+  

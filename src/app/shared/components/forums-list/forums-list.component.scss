@@ -1,0 +1,30 @@
+@import "src/assets/styles/custom-colors.scss";
+
+::ng-deep .card-deck .card {
+  margin: 10px;
+}
+
+::ng-deep .card {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .25), 0 3px 10px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+::ng-deep .card .card-body h4 {
+  padding: 0px 15px 0px 15px !important;
+  font-size: 20px !important;
+  font-family: Georgia, Times, serif !important;
+}
+
+::ng-deep .card .card-body .card-text {
+  padding: 0px 15px 0px 15px !important;
+  font-size: 17px !important;
+  font-family: Georgia, Times, serif !important;
+}
+
+#readmore {
+  font-size: 15px !important;
+}
+
+mdb-card-footer {
+  padding: 6px 10px 6px 10px;
+  background-color: map-get($bhumi-grey,800);
+}

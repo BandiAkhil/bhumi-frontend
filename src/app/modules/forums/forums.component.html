@@ -1,1 +1,20 @@
-<p>forums works!</p>
+<div class="section-background">
+    <img id="background-image" class = "img-fluid" src="assets/img/green-slate.png">
+    <div id="main-title" class="centered">All Forums</div>
+</div>
+<div class="custom-padding">
+        <div class="container">
+        <div class="content">
+        <br>
+        <div class="row">
+            <app-forums-list [forumList]="forums | slice: (paginationPage-1) * paginationSize : (paginationPage-1) * paginationSize + paginationSize"></app-forums-list>
+        </div>
+        <ngb-pagination class="justify-content-center d-flex"
+                        [(page)]="paginationPage"
+                        [pageSize]="paginationSize"
+                        [collectionSize]="forums.length"
+                        [maxSize]="6"
+                        [rotate]="true"></ngb-pagination>
+        </div>
+    </div>
+</div>

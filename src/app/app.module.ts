@@ -7,12 +7,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FooterComponent } from './layout/footer/footer.component';
 import { PageLayoutComponent } from './layout/page-layout/page-layout.component';
-import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
-import { HomeComponent } from './modules/home/home.component';
+import { CoreModule } from 'src/app/core/core.module';
 import { AccountComponent } from './modules/account/account.component';
 import { NotFoundComponent } from './modules/not-found/not-found.component';
-import { AdminComponent } from './modules/admin/admin.component';
-import { ForumsComponent } from './modules/forums/forums.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,17 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     FooterComponent,
-    AdminLayoutComponent,
     AccountComponent,
     NotFoundComponent,
-    AdminComponent,
-    ForumsComponent,
-    PageLayoutComponent
+    PageLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    CoreModule,
     BrowserAnimationsModule,
     NgbModule,
     HttpClientModule,

@@ -4,5 +4,6 @@ export interface Comment {
   postId: number;
   parentCommentId: number;
   userId: number;
+  username: string;
   date: string;
 }

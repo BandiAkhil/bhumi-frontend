@@ -20,10 +20,10 @@ export class CommentService {
   }
 
   updateComment(data: FormData, postId: number | string, commentId: number | string) {
-    return this.http.put<Comment>(`${this.baseUrl}/${postId}/comments/${commentId}/update/`, data);
+    return this.http.put<Comment>(`${this.baseUrl}/${postId}/comments/${commentId}`, data);
   }
 
   deleteComment(postId: number | string, commentId: number | string) {
-    return this.http.delete<void>(`${this.baseUrl}/${postId}/comments/${commentId}/delete`);
+    return this.http.delete<void>(`${this.baseUrl}/${postId}/comments/${commentId}`);
   }
 }

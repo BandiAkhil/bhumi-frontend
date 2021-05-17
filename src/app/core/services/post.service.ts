@@ -11,13 +11,8 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  getPosts(limit = -1) {
-    if (limit === -1) {
-      return this.http.get<Post[]>(`${this.baseUrl}/all`);
-    }
-    return this.http.get<Post[]>(this.baseUrl, {
-      params: {limit: limit.toString()}
-    });
+  getPosts() {
+    return this.http.get<Post[]>(`${this.baseUrl}`);
   }
 
   getPostById(id: number | string) {
@@ -25,14 +20,14 @@ export class PostService {
   }
 
   createPost(data: FormData) {
-    return this.http.post<Post>(`${this.baseUrl}/add`, data);
+    return this.http.post<Post>(`${this.baseUrl}`, data);
   }
 
   updatePost(data: FormData, id: number | string) {
-    return this.http.put<Post>(`${this.baseUrl}/update/${id}`, data);
+    return this.http.put<Post>(`${this.baseUrl}/${id}`, data);
   }
 
   deletePost(id: number) {
-    return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

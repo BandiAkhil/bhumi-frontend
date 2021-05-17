@@ -1,0 +1,39 @@
+<form [formGroup]="postForm" (ngSubmit)="onSave()">
+    <div class="row">
+        <div class="col-12">
+        <div class="form-group">
+            <label for="title">Title*</label>
+            <input id="title" type="text" class="form-control" formControlName="title"
+                    [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+            <div *ngIf="f.title.errors.required">Title is required</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <div class="form-group">
+            <label for="body">Body*</label>
+            <app-html-editor id="body" name="body" formControlName="body" [ngClass]="{ 'is-invalid': submitted && f.body.errors }"></app-html-editor>
+            <div *ngIf="submitted && f.body.errors" class="invalid-feedback">
+            <div *ngIf="f.body.errors.required">Body is required</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-12">
+        <app-img-upload formControlName="uploadedImg"></app-img-upload>
+        </div>
+    </div> -->
+    <div class="row pt-4">
+        <div class="col-auto">
+        <button type="submit" class="btn btn-success">Save</button>
+        </div>
+        <div class="col-auto ml-auto">
+        <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+    </div>
+</form>
+  

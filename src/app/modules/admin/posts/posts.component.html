@@ -1,1 +1,28 @@
-<p>posts works!</p>
+<div class="row justify-content-between">
+  <div class="col-sm-6 col-12">
+    <h1>Manage articles</h1>
+  </div>
+  <div class="col-sm-5 col-12">
+    <div class="row justify-content-end">
+      <div class="col-sm-auto col-6">
+        <button type="button" class="btn btn-primary" routerLink="./add">
+          <i class="material-icons btn-icon">
+            add
+          </i>
+          Add article
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <app-pagination-table (delete)="onDeleteArticle($event)" (edit)="editArticle($event)"
+      [data]="articles"
+      [headers]="['Title', 'Body', 'Updated', 'Likes']"
+      [keys]="['title', 'body', 'date', 'id']"
+      [showActionColumn]="true"
+      [columnDefs]="columnDefs">
+    </app-pagination-table>
+  </div>
+</div>

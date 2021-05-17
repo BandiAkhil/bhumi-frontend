@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AdminLayoutComponent } from '@src/app/layout/admin-layout/admin-layout.component';
 import { SharedModule } from '@src/app/shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
-import { CommentsComponent } from './comments/comments.component';
-import { ForumsComponent } from './forums/forums.component';
+import { AdminComponent } from './admin.component';
 
 
 @NgModule({
   declarations: [
-    CommentsComponent,
-    ForumsComponent
+    AdminComponent,
+    AdminLayoutComponent
   ],
   imports: [
     SharedModule,
-    CommonModule,
     AdminRoutingModule
   ]
 })

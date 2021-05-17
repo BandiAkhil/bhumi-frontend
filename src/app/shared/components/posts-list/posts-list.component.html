@@ -1,13 +1,9 @@
 <div fxLayout="column" fxLayoutGap="3vw">
   <div class="card-deck">
     <div class="col-sm-6 my-3 text-left" *ngFor="let post of postsList">
-  <!--    <h5 class="post-title"><a [routerLink]="'/posts/' + post.id">{{post.title}}</a></h5>-->
-  <!--    <p><small>Updated: {{post.date}}</small></p>-->
-  <!--    <p>{{((post.body | htmlToText).length>280)? ((post.body | htmlToText) | slice:0:280)+'..':(post.body | htmlToText)}}-->
-  <!--    </p>-->
       <mdb-card class="article-card">
         <div class="view overlay waves-light" mdbWavesEffect>
-          <mdb-card-img src="{{post.imageUrl}}" alt="Card image cap"></mdb-card-img>
+          <mdb-card-img src="{{post.image.path}}" alt="Card image cap"></mdb-card-img>
         </div>
         <a [routerLink]="'/posts/' + post.id">
           <mdb-card-body>

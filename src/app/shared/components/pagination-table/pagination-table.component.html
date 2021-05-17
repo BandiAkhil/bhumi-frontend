@@ -1,0 +1,52 @@
+<input class="form-control" *ngIf="mode == 'backend'" [formControl]="searchTerm"  placeholder="Search members">
+<ng-container *ngIf="data && data.length > 0; else noContent">
+  <div class="table-responsive">
+    <table class="table table-striped table-dark table-bordered w-100">
+      <thead>
+        <tr>
+          <th *ngFor="let header of headers">
+            {{ header }}
+          </th>
+          <th *ngIf="showActionColumn">
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of _data">
+          <td *ngFor="let key of keys">
+            <ng-container *ngIf="hasColumnDef(key); else value">
+              {{ getColumnDef(key).format(get(row, key)) }}
+            </ng-container>
+            <ng-template #value>
+              {{ get(row, key) }}
+            </ng-template>
+
+          </td>
+
+          <td *ngIf="showActionColumn">
+            <i class="material-icons pointer text-warning" (click)="onEdit(row)">
+              edit
+            </i>
+            <i class="material-icons pointer text-danger" (click)="onDelete(row)">
+              delete
+            </i>
+
+            <ng-container 
+              [ngTemplateOutlet]="customActionTemplate" 
+              [ngTemplateOutletContext]="{ $implicit: row }"> 
+            </ng-container>    
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ngb-pagination #paginator class="justify-content-center d-flex" [page]="paginationPage" (pageChange)="onPageChange($event)"
+    [pageSize]="paginationSize" [collectionSize]="total ? total : data.length" [maxSize]="7" [rotate]="true"></ngb-pagination>
+</ng-container>
+<ng-template #noContent>
+  <div class="alert alert-warning">
+    No data
+  </div>
+</ng-template>

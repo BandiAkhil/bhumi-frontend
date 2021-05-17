@@ -5,7 +5,7 @@ import { PostsListComponent } from 'src/app/shared/components/posts-list/posts-l
 import { RouterModule } from '@angular/router';
 import { NgbModalModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { PaginationTableComponent } from 'src/app/shared/components/pagination-table/pagination-table.component';
+import { PaginationTableComponent } from 'src/app/shared/components/pagination-table/pagination-table.component';
 //import { RoleDirective } from 'src/app/shared/directives/role.directive';
 //import { ArrowBackComponent } from 'src/app/shared/components/buttons/arrow-back/arrow-back.component';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
@@ -15,19 +15,30 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
 import { environment } from 'src/environments/environment.prod';
 import { HtmlToTextPipe } from 'src/app/shared/pipes/html-to-text.pipe';
 //import { MatButtonModule, MatProgressSpinnerModule } from '@angular/material';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ForumsListComponent } from './components/forums-list/forums-list.component';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { ImgUploadComponent } from './components/img-upload/img-upload.component';
+import { HtmlEditorComponent } from './components/html-editor/html-editor.component';
 
 @NgModule({
   declarations: [
     PostsListComponent,
-    //PaginationTableComponent,
+    PaginationTableComponent,
     //RoleDirective,
     //ArrowBackComponent,
     HeaderComponent,
     HtmlToTextPipe,
     //DeleteModalComponent,
     //MemberSearchComponent,
-    //ForumsListComponent
+    ForumsListComponent,
+    DeleteModalComponent,
+    PaginationTableComponent,
+    TruncatePipe,
+    ImgUploadComponent,
+    HtmlEditorComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +48,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     NgbPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
+    CKEditorModule
     //MatButtonModule,
     //MatProgressSpinnerModule
   ],
@@ -47,19 +59,22 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    //PaginationTableComponent,
+    PaginationTableComponent,
     //RoleDirective,
     //ArrowBackComponent,
     HeaderComponent,
     //MaterialModule,
     NgbModalModule,
     HtmlToTextPipe,
-    MDBBootstrapModule
+    HtmlEditorComponent,
+    MDBBootstrapModule,
     //MemberSearchComponent,
-    //ForumsListComponent
+    ForumsListComponent,
+    TruncatePipe
   ],
   providers: [
-    HtmlToTextPipe
+    HtmlToTextPipe,
+    TruncatePipe
   ],
   entryComponents: [
     //DeleteModalComponent

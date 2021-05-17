@@ -47,9 +47,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.f.email.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        () => {
+       .subscribe(
+        data => {
           if (this.redirect) {
             this.router.navigate([this.redirect]);
           } else {
@@ -57,10 +56,15 @@ export class LoginComponent implements OnInit {
           }
           this.submitted = false;
           this.router.navigate(['']);
+          console.log(data);
+        },
+        error => {
+          //this.notifierService.notify('error', 'Email or password incorrect');
+          console.log(error);
         },
         () => {
-          //this.notifierService.notify('error', 'Email or password incorrect');
+          console.log('complete');
         }
-      );
+       );
   }
 }

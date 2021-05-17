@@ -24,6 +24,6 @@ export class VoteService {
   }
 
   deleteVote(postId: number | string, voteId: number | string) {
-    return this.http.delete<void>(`${this.baseUrl}/${postId}/posts/${voteId}/delete`);
+    return this.http.delete<void>(`${this.baseUrl}/${postId}/posts/${voteId}`);
   }
 }
