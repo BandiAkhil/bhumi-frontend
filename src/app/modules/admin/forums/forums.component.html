@@ -1,1 +1,17 @@
-<p>forums works!</p>
+<div class="row justify-content-between">
+    <div class="col-sm-6 col-12">
+        <h1>Manage forums</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <app-pagination-table (delete)="onDeleteForum($event)" (edit)="editForum($event)"
+        [data]="forums"
+        [headers]="['Title', 'Body', 'User', 'Date', 'Likes']"
+        [keys]="['title', 'body', 'username', 'date', 'id']"
+        [showActionColumn]="true"
+        [columnDefs]="columnDefs">
+        </app-pagination-table>
+    </div>
+</div>
+  

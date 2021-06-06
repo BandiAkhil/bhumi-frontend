@@ -1,9 +1,9 @@
-import { UploadedImg } from "./uploaded-img";
+import { Image } from "./image";
 
 export interface Post {
   id: number;
   title: string;
   body: string;
-  image: UploadedImg;
+  imageUrl: string;
   date: string;
 }

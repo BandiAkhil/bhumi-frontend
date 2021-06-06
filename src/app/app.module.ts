@@ -9,7 +9,6 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { PageLayoutComponent } from './layout/page-layout/page-layout.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { AccountComponent } from './modules/account/account.component';
-import { NotFoundComponent } from './modules/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     FooterComponent,
     AccountComponent,
-    NotFoundComponent,
     PageLayoutComponent,
   ],
   imports: [

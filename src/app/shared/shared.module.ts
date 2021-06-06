@@ -22,6 +22,8 @@ import { DeleteModalComponent } from './components/delete-modal/delete-modal.com
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { ImgUploadComponent } from './components/img-upload/img-upload.component';
 import { HtmlEditorComponent } from './components/html-editor/html-editor.component';
+import { VideosListComponent } from './components/videos-list/videos-list.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { HtmlEditorComponent } from './components/html-editor/html-editor.compon
     PaginationTableComponent,
     TruncatePipe,
     ImgUploadComponent,
-    HtmlEditorComponent
+    HtmlEditorComponent,
+    VideosListComponent,
+    SafeUrlPipe
   ],
   imports: [
     CommonModule,
@@ -55,6 +59,7 @@ import { HtmlEditorComponent } from './components/html-editor/html-editor.compon
   ],
   exports: [
     PostsListComponent,
+    VideosListComponent,
     CommonModule,
     FlexLayoutModule,
     FormsModule,
@@ -70,10 +75,12 @@ import { HtmlEditorComponent } from './components/html-editor/html-editor.compon
     MDBBootstrapModule,
     //MemberSearchComponent,
     ForumsListComponent,
-    TruncatePipe
+    TruncatePipe,
+    SafeUrlPipe
   ],
   providers: [
     HtmlToTextPipe,
+    SafeUrlPipe,
     TruncatePipe
   ],
   entryComponents: [

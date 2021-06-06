@@ -1,0 +1,21 @@
+@import "src/assets/styles/custom-colors.scss";
+
+.error-code {
+    font-size: 10vw;
+    font-weight: 300;
+    padding-top: 1vw;
+}
+
+img {
+    width: 18vw;
+}
+
+h2 {
+    padding-top: 3vw;
+}
+
+button {
+    margin-top: 2vw;
+    background-color: map-get($bhumi-green, 600) !important;
+}
+  

@@ -1,0 +1,76 @@
+@import "src/assets/styles/custom-colors.scss";
+
+#background-image {
+    width: 100%;
+    height: 30vh;
+}
+
+.section-background {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+blockquote {
+    // background: #f8fff9;
+    padding: 0.5em 10px;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+blockquote:before {
+    color: #74cc77;
+    content: open-quote;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote:after {
+    color: #74cc77;
+    content: close-quote;
+    align-content: flex-end;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+}
+
+figcaption {
+    text-align: right; 
+    margin: 0 10em 1em 0;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #6c757d;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn-primary {
+    background-color: map-get($bhumi-green, 600) !important;
+    float: center;
+}
+
+.button-text {
+    color: white !important;
+}
+
+mdb-card {
+    margin: 15px 0 20px 0;
+}

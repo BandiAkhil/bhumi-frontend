@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+import { IshaRoutingModule } from './isha-routing.module';
+import { IshaComponent } from './isha.component';
+import { SharedModule } from '@src/app/shared/shared.module';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [IshaComponent],
   imports: [
-    CommonModule
+    SharedModule,
+    IshaRoutingModule,
+    NgbPaginationModule
   ]
 })
 export class IshaModule { }

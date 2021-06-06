@@ -59,4 +59,18 @@ export class PostItemComponent implements OnInit {
     // return this.sanitizer.sanitize(SecurityContext.HTML, this.newsItem.content);
     return this.sanitizer.bypassSecurityTrustHtml(this.postItem.body);
   }
+
+  setCommentMargin(c: Comment) {
+    let styles = {
+      'margin-left': 30*c.commentDepth + 'px'
+    };
+    return styles;
+  }
+
+  setBorderLength(c: Comment) {
+    let styles = {
+      'height': this.comments.length*170 - c.commentDepth*800 + 'px'
+    };
+    return styles;
+  }
 }

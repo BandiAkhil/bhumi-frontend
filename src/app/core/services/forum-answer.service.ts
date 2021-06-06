@@ -11,23 +11,27 @@ export class ForumAnswerService {
 
   constructor(private http: HttpClient) { }
 
-  getForums(forumId: number | string) {
+  getAllForumAnswers() {
+    return this.http.get<ForumAnswer[]>(`${this.baseUrl.replace('forums/{forumId}', 'admin')}`);
+  }
+
+  getForumAnswers(forumId: number | string) {
     return this.http.get<ForumAnswer[]>(`${this.baseUrl.replace('{forumId}', `${forumId}`)}`);
   }
 
-  getPostById(forumId: number | string, id: number | string) {
+  getForumAnswerById(forumId: number | string, id: number | string) {
     return this.http.get<ForumAnswer>(`${this.baseUrl.replace('{forumId}', `${forumId}`)}/${id}`);
   }
 
-  createPost(forumId: number | string, data: FormData) {
+  createForumAnswer(forumId: number | string, data: FormData) {
     return this.http.post<ForumAnswer>(`${this.baseUrl.replace('{forumId}', `${forumId}`)}`, data);
   }
 
-  updatePost(forumId: number | string, data: FormData, id: number | string) {
+  updateForumAnswer(forumId: number | string, data: FormData, id: number | string) {
     return this.http.put<ForumAnswer>(`${this.baseUrl.replace('{forumId}', `${forumId}`)}/${id}`, data);
   }
 
-  deletePost(forumId: number | string, id: number) {
+  deleteForumAnswer(forumId: number | string, id: number) {
     return this.http.delete<void>(`${this.baseUrl.replace('{forumId}', `${forumId}`)}/${id}`);
   }
 }

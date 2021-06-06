@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ForumsRoutingModule } from './forums-routing.module';
+import { SharedModule } from '@src/app/shared/shared.module';
+import { ForumsComponent } from './forums.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ForumsComponent
+  ],
   imports: [
-    CommonModule,
+    SharedModule,
     ForumsRoutingModule
   ]
 })

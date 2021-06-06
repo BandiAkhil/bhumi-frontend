@@ -46,10 +46,10 @@ const routes: Routes = [
 //           page: PageResolver
 //         }
 //       },
-//       {
-//         path: '**',
-//         loadChildren: () => import('./modules/not-found/not-found.module').then(m => m.NotFoundModule)
-//       }
+      {
+        path: '**',
+        loadChildren: () => import('./modules/not-found/not-found.module').then(m => m.NotFoundModule)
+      }
     ]
   }
 ];

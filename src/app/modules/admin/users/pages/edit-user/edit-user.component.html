@@ -1,0 +1,7 @@
+<div class="row">
+    <div class="col-12">
+      <h1>Edit user</h1>
+    </div>
+</div>
+<app-user-form *ngIf="user" [user]="user" (save)="onSave($event)" (cancel)="onCancel()"></app-user-form>
+  

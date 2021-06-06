@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutGap="3vw">
+    <!-- <div class="mdb-card">
+      <div class="col h-100 text-left" *ngFor="let video of videosList">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{video.url}}" allowfullscreen></iframe>
+        </div>
+        <mdb-card class="video-card">
+          <div>
+            <iframe src="{{video.url}}" allowfullscreen></iframe>
+          </div>
+          <a [routerLink]="'/videos/' + video.id">
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>{{(video.name.length>72)? (video.name | slice:0:72)+ '..': video.name}}</h4>
+              </mdb-card-title>
+            </mdb-card-body>
+          </a>
+          <mdb-card-footer class="text-center">
+            <ul class="list-unstyled list-inline font-small mt-3">
+              <li class="list-inline-item pr-2 white-text">
+                <mdb-icon fas icon="clock" class="pr-1"></mdb-icon>{{video.uploaded}}</li>
+              <li class="list-inline-item pr-2">
+                <a class="popularity" [routerLink]="'/videos/' + video.id" class="white-text">
+                  <mdb-icon fas icon="comments" class="pr-1"></mdb-icon>12</a>
+              </li>
+              <li class="list-inline-item pr-2">
+                <a class="popularity" [routerLink]="'/videos/' + video.id" class="white-text">
+                  <mdb-icon fas icon="heart" class="pr-1"> </mdb-icon>21</a>
+              </li>
+            </ul>
+          </mdb-card-footer>
+        </mdb-card>
+      </div>
+    </div> -->
+    <div class="videos" *ngFor="let video of videosList">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" [src]="video.url | safeUrl" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+  

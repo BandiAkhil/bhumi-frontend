@@ -7,23 +7,23 @@ import { Post } from '@src/app/core/models/post';
 })
 export class PostService {
 
-  baseUrl = 'api/posts';
+  baseUrl = 'api/admin/posts';
 
   constructor(private http: HttpClient) {}
 
   getPosts() {
-    return this.http.get<Post[]>(`${this.baseUrl}`);
+    return this.http.get<Post[]>(`${this.baseUrl.replace('admin/', '')}`);
   }
 
   getPostById(id: number | string) {
-    return this.http.get<Post>(`${this.baseUrl}/${id}`);
+    return this.http.get<Post>(`${this.baseUrl.replace('admin/', '')}/${id}`);
   }
 
-  createPost(data: FormData) {
+  createPost(data: Post) {
     return this.http.post<Post>(`${this.baseUrl}`, data);
   }
 
-  updatePost(data: FormData, id: number | string) {
+  updatePost(data: Post, id: number | string) {
     return this.http.put<Post>(`${this.baseUrl}/${id}`, data);
   }
 

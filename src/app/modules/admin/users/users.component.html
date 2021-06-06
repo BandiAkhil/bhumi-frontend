@@ -1,1 +1,28 @@
-<p>users works!</p>
+<div class="row justify-content-between">
+    <div class="col-sm-6 col-12">
+      <h1>Manage users</h1>
+    </div>
+    <div class="col-sm-5 col-12">
+      <div class="row justify-content-end">
+        <div class="col-sm-auto col-6">
+          <button type="button" class="btn btn-primary" routerLink="./add">
+            <i class="material-icons btn-icon">
+              add
+            </i>
+            Add user
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-pagination-table (delete)="onDeleteUser($event)" (edit)="editUser($event)"
+        [data]="users"
+        [headers]="['Username', 'Email', 'Created', 'Role']"
+        [keys]="['username', 'email', 'created', 'role']"
+        [showActionColumn]="true">
+      </app-pagination-table>
+    </div>
+  </div>
+  

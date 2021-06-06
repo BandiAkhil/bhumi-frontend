@@ -1,7 +1,7 @@
 <div class="post" *ngIf="postItem">
   <div class="section-background">
     <img id="background-image" class = "img-fluid" src="assets/img/green-slate.png">
-    <!-- <img id="post-image" class = "img-fluid" src="{{postItem.image.path}}"> -->
+    <img id="post-image" class = "img-fluid" src="{{ postItem.imageUrl }}">
   </div>
   <div class="custom-padding">
     <div class="container">
@@ -12,17 +12,91 @@
         </small></p>
         <br>
         <p [innerHTML]="postItem.body"></p><br>
+        <p><button id="like" type="button" mdbBtn><mdb-icon far icon="heart"></mdb-icon></button> {{ voteCount }} Likes</p>
         <div class="comment-block">
-          <p><button id="like" type="button" mdbBtn><mdb-icon far icon="heart"></mdb-icon></button> {{ voteCount }} Likes</p>
           <ul class="row" *ngFor="let c of comments">
             <li>
-              <div class="col-1"><img class="avatar" src="assets/img/bhumi-logo.png" width="40" height="40" alt="avatar"></div>
+              <div class="col-1"><img class="avatar" src="assets/img/green-slate.png" width="40" height="40" alt="avatar"></div>
               <div class="col-11">
                 <header>{{ c.username }} - <span>{{ c.date }}</span></header>
                 <p>{{ c.text }}</p>
               </div>
             </li>
           </ul>
+        </div>
+        <div class="comment-thread" *ngVar="0 as var">
+          <details open class="comment" id="comment" *ngFor="let c of comments" [ngStyle]="setCommentMargin(c)">
+            <a class="comment-border-link" [ngStyle]="setBorderLength(c)"></a>
+            <summary>
+                <div class="comment-heading">
+                    <div class="comment-info">
+                        <a href="#" class="comment-author">{{ c.username }} &bull; {{ c.date }}</a>
+                    </div>
+                </div>
+            </summary>
+            <div class="comment-body">
+                <p>
+                  {{ c.text }}
+                </p>
+                <div class="voting">
+                  <button id="like" type="button" mdbBtn><mdb-icon far icon="heart"></mdb-icon></button>
+                  <p class="m-0">
+                    {{ voteCount }} Likes
+                  </p>
+                </div>
+                <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Reply</button>
+                <button type="button">Flag</button>
+    
+                <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
+                    <textarea placeholder="Reply to comment" rows="4"></textarea>
+                    <button type="submit">Submit</button>
+                    <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Cancel</button>
+                </form>
+              </div>
+              <div class="replies">
+                <details open class="comment" id="comment-2">
+                    <a href="#comment-2" class="comment-border-link">
+                        <span class="sr-only">Jump to comment-2</span>
+                    </a>
+                    <summary>
+                        <div class="comment-heading">
+                            <div class="comment-voting">
+                                <button type="button">
+                                    <span aria-hidden="true">&#9650;</span>
+                                    <span class="sr-only">Vote up</span>
+                                </button>
+                                <button type="button">
+                                    <span aria-hidden="true">&#9660;</span>
+                                    <span class="sr-only">Vote down</span>
+                                </button>
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-author">randomperson81</a>
+                                <p class="m-0">
+                                    4 points &bull; 3 days ago
+                                </p>
+                            </div>
+                        </div>
+                    </summary>
+    
+                    <div class="comment-body">
+                        <p>
+                            Took the words right out of my mouth!
+                        </p>
+                        <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Reply</button>
+                        <button type="button">Flag</button>
+    
+                        <!-- Reply form start -->
+                        <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+                            <textarea placeholder="Reply to comment" rows="4"></textarea>
+                            <button type="submit">Submit</button>
+                            <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Cancel</button>
+                        </form>
+                        <!-- Reply form end -->
+                    </div>
+                </details>    
+            </div>
+          </details>
         </div>
       </div>
     </div>

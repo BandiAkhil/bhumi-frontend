@@ -1,1 +1,17 @@
-<p>comments works!</p>
+<div class="row justify-content-between">
+    <div class="col-sm-6 col-12">
+        <h1>Manage comments</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <app-pagination-table (delete)="onDeleteComment($event)" (edit)="editComment($event)"
+        [data]="comments"
+        [headers]="['Comment', 'Post', 'User', 'Date', 'Likes']"
+        [keys]="['text', 'postId', 'userId', 'date', 'id']"
+        [showActionColumn]="true"
+        [columnDefs]="columnDefs">
+        </app-pagination-table>
+    </div>
+</div>
+  

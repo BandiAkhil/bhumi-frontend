@@ -6,4 +6,6 @@ export interface Comment {
   userId: number;
   username: string;
   date: string;
+  commentDepth: number;
+  childCount: number;
 }

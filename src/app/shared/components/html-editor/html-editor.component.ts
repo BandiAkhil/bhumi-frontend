@@ -1,6 +1,6 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as Editor from '@ckeditor/ckeditor5-build-classic';
+import * as Editor from 'ckeditor5-build-classic-plus';
 
 @Component({
   selector: 'app-html-editor',
@@ -16,7 +16,7 @@ import * as Editor from '@ckeditor/ckeditor5-build-classic';
 })
 export class HtmlEditorComponent implements OnInit, ControlValueAccessor {
 
-  value: any = '<h2>Hello, world!</h2>';
+  value: string;
   editor = Editor;
   config = {
     toolbar: {
@@ -30,10 +30,6 @@ export class HtmlEditorComponent implements OnInit, ControlValueAccessor {
         'link',
         'bulletedList',
         'numberedList',
-        '|',
-        'fontColor',
-        'fontSize',
-        'fontFamily',
         '|',
         'alignment',
         'indent',
@@ -51,9 +47,15 @@ export class HtmlEditorComponent implements OnInit, ControlValueAccessor {
     image: {
       toolbar: [
         'imageTextAlternative',
-        'imageStyle:full',
-        'imageStyle:side'
+        'imageStyle:full'
       ]
+    },
+    easyImage: {
+      uploadUrl: '',
+      headers: {
+        'X-CSRF-TOKEN': 'CSFR-Token',
+        Authorization: 'Bearer <JSON Web Token>'
+      }
     },
     table: {
       contentToolbar: [
@@ -64,7 +66,12 @@ export class HtmlEditorComponent implements OnInit, ControlValueAccessor {
     }
   };
 
-  constructor() { }
+  constructor() { 
+  }
+
+  onReady(editor) {
+    editor.setData(this.value);
+  }
 
   ngOnInit() {
   }

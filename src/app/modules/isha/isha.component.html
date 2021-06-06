@@ -1,1 +1,89 @@
-<p>isha works!</p>
+<div class="section-background">
+    <img id="background-image" class = "img-fluid" src="assets/img/green-slate.png">
+    <div id="main-title" class="centered">Isha and Sadhguru</div>
+</div>
+<div class="custom-padding">
+        <div class="container">
+            <div class="content">
+            <br>
+            <div class="row">
+                <div class="col-12 col-sm-9">
+                    <div class="row" style="margin-bottom: 5em;">
+                        <h3 style="margin-bottom: 1.5em;">Quote of the week</h3>
+                        <figure style="background: #f8fff9;">
+                            <blockquote>{{ quote }}</blockquote>
+                            <figcaption>- Sadhguru</figcaption>
+                        </figure>
+                    </div>
+                    <div class="row">
+                        <h3 style="margin-bottom: 1.5em;">Isha Videos</h3>
+                        <app-videos-list [videosList]="videoUrls | slice: (paginationPage-1) * paginationSize : (paginationPage-1) * paginationSize + paginationSize"></app-videos-list>
+                    </div>
+                    <ngb-pagination class="justify-content-center d-flex"
+                                    [(page)]="paginationPage"
+                                    [pageSize]="paginationSize"
+                                    [collectionSize]="videoUrls.length"
+                                    [maxSize]="9"
+                                    [rotate]="true"></ngb-pagination>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <h3>Isha Inner Engineering</h3>
+                    <br>
+                    <p>Inner Engineering is an opportunity to engineer an inner transformation that deepens your perception, bringing about a dimensional shift in the very way you look at your life, your work, and the world that you inhabit. It is offered as an intensive program for personal growth and establishes the possibility of exploring the higher dimensions of life, in addition to optimizing health and success.</p>
+                    <p>You can register for any of the three Inner Engineering courses below, which offer different levels of experience.</p>
+                    <div class="card-deck">
+                        <a href="https://isha.sadhguru.org/in/en/inner-engineering-online">
+                        <mdb-card>
+                            <div class="view overlay waves-light" mdbWavesEffect>
+                            <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2020-05/EMD20-IEO-home_6.jpg" alt="Card image cap"></mdb-card-img>
+                            </div>
+                            <mdb-card-body>
+                            <mdb-card-title>
+                                <h4>Inner Engineering Online</h4>
+                            </mdb-card-title>
+                            <mdb-card-text>
+                                Inner Engineering Online is a 7-session online course that provides tools and solutions to…
+                            </mdb-card-text>
+                            <a class="button-text" href="https://isha.sadhguru.org/in/en/inner-engineering-online" mdbBtn color="primary" mdbWavesEffect>Register</a>
+                            </mdb-card-body>
+                        </mdb-card>
+                        </a>
+                        <a href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-completion">
+                        <mdb-card>
+                            <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                            <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2017-11/Website-Thumbnail-YogaMeditation-IE-Completion.jpg" alt="Card image cap"></mdb-card-img>
+                            </div>
+                            <mdb-card-body>
+                            <mdb-card-title>
+                                <h4>Inner Engineering Completion</h4>
+                            </mdb-card-title>
+                            <mdb-card-text>
+                                A 1-2 day in-person course for those who have completed Inner Engineering Online, where one…
+                            </mdb-card-text>
+                            <a class="button-text" href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-completion" mdbBtn color="primary" mdbWavesEffect>Register</a>
+                            </mdb-card-body>
+                        </mdb-card>
+                        </a>
+                        <a href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-total">
+                        <mdb-card>
+                            <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                            <mdb-card-img src="https://images.sadhguru.org/sites/default/files/2017-11/Website-Thumbnail-YogaMeditation-IETotal.jpg" alt="Card image cap"></mdb-card-img>
+                            </div>
+                            <mdb-card-body>
+                            <mdb-card-title>
+                                <h4>Inner Engineering Total</h4>
+                            </mdb-card-title>
+                            <mdb-card-text>
+                                An in-person program combining the tools from Inner Engineering Online and the Shambhavi…
+                            </mdb-card-text>
+                            <a class="button-text" href="https://isha.sadhguru.org/in/en/yoga-meditation/yoga-program-for-beginners/inner-engineering/inner-engineering-total" mdbBtn color="primary" mdbWavesEffect>Register</a>
+                            </mdb-card-body>
+                        </mdb-card>
+                        </a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

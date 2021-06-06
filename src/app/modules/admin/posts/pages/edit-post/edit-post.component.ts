@@ -25,7 +25,7 @@ export class EditPostComponent implements OnInit {
     });
   }
 
-  onSave(data: FormData) {
+  onSave(data: Post) {
     this.postService.updatePost(data, this.post.id).subscribe(() => {
       this.router.navigate(['/admin/posts']).then(() => {
         //this.notifierService.notify('success', 'News item successfully updated.');

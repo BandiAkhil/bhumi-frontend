@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { ForumAnswersRoutingModule } from './forum-answers-routing.module';
 import { ForumAnswersComponent } from './forum-answers.component';
+import { SharedModule } from '@src/app/shared/shared.module';
 
 
 @NgModule({
@@ -10,7 +10,7 @@ import { ForumAnswersComponent } from './forum-answers.component';
     ForumAnswersComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     ForumAnswersRoutingModule
   ]
 })

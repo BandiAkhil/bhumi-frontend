@@ -3,7 +3,7 @@
     <div class="col-sm-6 my-3 text-left" *ngFor="let post of postsList">
       <mdb-card class="article-card">
         <div class="view overlay waves-light" mdbWavesEffect>
-          <mdb-card-img src="{{post.image.path}}" alt="Card image cap"></mdb-card-img>
+          <mdb-card-img src="{{post.imageUrl}}" alt="Card image cap"></mdb-card-img>
         </div>
         <a [routerLink]="'/posts/' + post.id">
           <mdb-card-body>

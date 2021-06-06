@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Post } from '@src/app/core/models/post';
 import { PostService } from '@src/app/core/services/post.service';
 import { NotifierService } from 'angular-notifier';
 
@@ -18,7 +19,7 @@ export class AddPostComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSave(data: FormData) {
+  onSave(data: Post) {
     this.postService.createPost(data).subscribe(() => {
       this.router.navigate(['/admin/posts']).then(() => {
         //this.notifierService.notify('success', 'News item successfully created.');

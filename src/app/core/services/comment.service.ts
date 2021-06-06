@@ -11,6 +11,10 @@ export class CommentService {
 
   constructor(private http: HttpClient) {}
 
+  getAllComments() {
+    return this.http.get<Comment[]>(`api/admin/comments`);
+  }
+
   getComments(postId: number | string) {
     return this.http.get<Comment[]>(`${this.baseUrl}/${postId}/comments`);
   }

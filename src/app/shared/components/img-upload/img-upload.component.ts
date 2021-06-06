@@ -1,6 +1,6 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { UploadedImg } from '@src/app/core/models/uploaded-img';
+import { Image } from '@src/app/core/models/image';
 
 @Component({
   selector: 'app-img-upload',
@@ -15,19 +15,19 @@ import { UploadedImg } from '@src/app/core/models/uploaded-img';
   ]
 })
 export class ImgUploadComponent implements OnInit, ControlValueAccessor {
-  @Input() img: UploadedImg;
+  @Input() img: Image;
   @Input() action: string;
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  addImg(img: UploadedImg) {
+  addImg(img: Image) {
     this.img = img;
     this.updateChanges();
   }
 
-  removeImg(img: UploadedImg) {
+  removeImg(img: Image) {
     this.updateChanges();
   }
 
@@ -43,7 +43,7 @@ export class ImgUploadComponent implements OnInit, ControlValueAccessor {
    * OVERRIDES
    */
 
-  writeValue(img: UploadedImg): void {
+  writeValue(img: Image): void {
     this.img = img;
     this.updateChanges();
   }
@@ -56,7 +56,7 @@ export class ImgUploadComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  deleteImg(img: UploadedImg) {
+  deleteImg(img: Image) {
     this.delete.emit(img);
   }
 

@@ -15,19 +15,19 @@ export class ForumService {
     return this.http.get<Forum[]>(`${this.baseUrl}`);
   }
 
-  getPostById(id: number | string) {
+  getForumById(id: number | string) {
     return this.http.get<Forum>(`${this.baseUrl}/${id}`);
   }
 
-  createPost(data: FormData) {
+  createForum(data: FormData) {
     return this.http.post<Forum>(`${this.baseUrl}`, data);
   }
 
-  updatePost(data: FormData, id: number | string) {
+  updateForum(data: FormData, id: number | string) {
     return this.http.put<Forum>(`${this.baseUrl}/${id}`, data);
   }
 
-  deletePost(id: number) {
+  deleteForum(id: number) {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }
